@@ -33,7 +33,7 @@ rankall <- function(outcome, num = "best") {
                 else if(num=="worst"){
                         num<-nrow(data_sorted)
                         hospital<-append(hospital, data_sorted$Hospital.Name[num])}
-                else if(num<nrow(data_sorted)){
+                else if(num<=nrow(data_sorted)){
                         hospital<-append(hospital, data_sorted$Hospital.Name[num])}
                 else if(num>nrow(data_sorted)){
                         hospital<-append(hospital, NA)}
@@ -41,11 +41,6 @@ rankall <- function(outcome, num = "best") {
                 
         }
         ranked_hopital<-cbind(hospital,state)
-        #colnames(ranked_hopital)<-c("hospital","state")
         return(ranked_hopital)
-        
-        
-        
-        
-        
+ 
 }
